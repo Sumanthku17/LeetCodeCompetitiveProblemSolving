@@ -3,8 +3,8 @@ public class Solution {
         string[] strArr = s.Split(' ');
         return String.Join(' ', reverseString(strArr));
     }
-    public IEnumerable<string> reverseString(string[] strArr)
+    public List<string> reverseString(string[] strArr)
     {
-        return strArr.Select(str => string.Concat((str.ToArray().Reverse())));
+        return strArr.Select(str => string.Concat((str.ToArray().Reverse()))).ToList();
     }
 }
