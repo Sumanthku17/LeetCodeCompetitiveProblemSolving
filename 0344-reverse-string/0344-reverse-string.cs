@@ -5,8 +5,7 @@ public class Solution {
         while(i<j){
             s[i] = (char) (s[i]^s[j]);
             s[j] = (char) (s[i]^s[j]);
-            s[i] = (char) (s[i]^s[j]);
-            i++; j--;
+            s[i] = (char) (s[i++]^s[j--]);
         }
     }
 }
