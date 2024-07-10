@@ -23,9 +23,14 @@ public class Solution {
             {
                 min = prices[i];
             }
-            else if(prices[i] - min > maxProfit)
+            
+            else
             {
-                maxProfit = prices[i] - min;
+                var diff = prices[i] - min;
+                if(diff > maxProfit)
+                {
+                    maxProfit = diff;   
+                }
             }
         }
         return maxProfit;
