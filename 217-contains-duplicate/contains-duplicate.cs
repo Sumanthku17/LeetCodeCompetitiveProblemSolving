@@ -1,6 +1,6 @@
 public class Solution {
     public bool ContainsDuplicate(int[] nums) {
-        HashSet<int> unique = new HashSet<int>();
+        List<int> unique = new List<int>();
         foreach(int i in nums)
         {
             if(unique.Contains(i))
