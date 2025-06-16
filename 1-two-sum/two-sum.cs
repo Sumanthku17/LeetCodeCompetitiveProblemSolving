@@ -1,17 +1,19 @@
 public class Solution {
     public int[] TwoSum(int[] nums, int target) {
-        for(int i = 0; i<nums.Length; i++)
+
+        // value of num and index mapping
+        Dictionary<int, int> map = new Dictionary<int, int>();
+
+        for(int i=0; i<nums.Length; i++)
         {
-            for(int j = 0; j<nums.Length; j++)
+            var compliment = target - nums[i];
+
+            if(map.ContainsKey(compliment))
             {
-                if(i!=j)
-                {
-                    if(nums[j] == target - nums[i])
-                    {
-                        return new int[2] {i , j};
-                    }
-                }
-            }   
+                return new int[] {i, map[compliment]};
+            }
+
+            map[nums[i]] = i;
         }
         return new int[2];
     }
