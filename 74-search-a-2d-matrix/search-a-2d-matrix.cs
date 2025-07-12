@@ -5,10 +5,26 @@ public class Solution {
         {
             intList.AddRange(matrix[i]);
         }
-        var index = intList.BinarySearch(target);
-        if(index>=0)
-            return true;
-        else
-            return false;
+
+
+        int low=0;
+        int hi=intList.Count()-1;
+        while(low<=hi)
+        {
+            int mid = low + (hi - low) / 2;
+            if(target>intList[mid])
+            {
+                low=mid+1;
+            }
+            else if(target<intList[mid])
+            {
+                hi=mid-1;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
