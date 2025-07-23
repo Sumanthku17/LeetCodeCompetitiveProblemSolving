@@ -29,7 +29,8 @@ public class Solution {
         long completedHours = 0;
         for(int i=0; i<piles.Length; i++)
         {
-            completedHours += (long)Math.Ceiling((double)piles[i]/mid);
+            //completedHours += (long)Math.Ceiling((double)piles[i]/mid);
+            completedHours += (piles[i] + mid -1)/mid;
             if(completedHours > h)
             {
                 return false;
